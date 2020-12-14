@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+struct time {
+    int hour, minute, second;
+};
+int main()
+{
+    time t;
+    t.hour = 0;
+    t.minute = 0;
+    t.second = 0;
+    for (int i = 0; i < 24; i++)
+    {
+        if (t.hour == 23)
+        {
+            t.hour = 0;
+        }
+        for (int j = 0; j < 60; j++)
+        {
+            if (t.minute == 59)
+            {
+                t.minute = 0;
+            }
+            for (int k = 0; k < 60; k++)
+            {
+                if (t.second == 59)
+                {
+                    t.second = 0;
+                }
+                cout << t.hour << " : " << t.minute << " : " << t.second << endl;
+                t.second++;
+                system("CLs");
+            }
+            t.minute++;
+        }
+        t.hour++;
+    }
+}
